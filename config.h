@@ -108,8 +108,6 @@ SoftwareSerial Serial2(RXD2, TXD2);
  */
 #if (defined ESP32) && (! defined ARDUINO_LOLIN_S2_MINI)
 
-asd
-
 #define BOARD_ML_V1 /* activate this when using the ML PCB V1 */
 //#define BOARD_ESP32_AUDIO_KIT_AC101 /* activate this when using the ESP32 Audio Kit v2.2 with the AC101 codec */
 //#define BOARD_ESP32_AUDIO_KIT_ES8388 /* activate this when using the ESP32 Audio Kit v2.2 with the ES8388 codec */
@@ -117,7 +115,7 @@ asd
 //#define BOARD_WEMOS_D1_MINI_ESP32
 
 #define SAMPLE_BUFFER_SIZE  (48) /* 48 1kHz testtone */
-
+#define SAMPLE_RATE  48000
 
 
 #if 0 /* setup */
