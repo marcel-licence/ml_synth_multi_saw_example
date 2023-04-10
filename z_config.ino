@@ -113,9 +113,9 @@ struct midiControllerMapping edirolMapping[] =
     { 0x5, 0x11, "S6", NULL, Slicer_SetDepth, 5},
     { 0x6, 0x11, "S7", NULL, Slicer_SetType, 6},
 #ifdef MAX_DELAY
-    { 0x7, 0x11, "S8", NULL, Delay_SetFeedback, 7},
+    { 0x7, 0x11, "S8", NULL, DelayQ_SetFeedback, 7},
 
-    { 0x1, 0x12, "S9", NULL, Delay_SetOutputLevel, 8},
+    { 0x1, 0x12, "S9", NULL, DelayQ_SetOutputLevel, 8},
 #endif
 
     /* rotary */
@@ -132,9 +132,9 @@ struct midiControllerMapping edirolMapping[] =
     { 0x4, 0x10, "R5", NULL, NULL, 4},
 #else
 #ifdef MAX_DELAY
-    { 0x3, 0x10, "R4", NULL, Delay_SetOutputLevelInt, 3},
+    { 0x3, 0x10, "R4", NULL, DelayQ_SetOutputLevelInt, 3},
 
-    { 0x4, 0x10, "R5", NULL, Delay_SetFeedbackInt, 4},
+    { 0x4, 0x10, "R5", NULL, DelayQ_SetFeedbackInt, 4},
 #endif
 #endif
     { 0x5, 0x10, "R6", NULL, NULL, 5},

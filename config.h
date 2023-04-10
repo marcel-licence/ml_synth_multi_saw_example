@@ -72,6 +72,46 @@
 /* use the following to test the output / codec */
 //#define OUTPUT_SAW_TEST
 
+
+/*
+ * Configuration for
+ * Board: "Rapsberry Pi Pico"
+ *
+ * BCK: 26
+ * DIN: 28
+ * LCK: 27  (always BCK + 1)
+ *
+ * MIDI_RX: 12 (GP9)
+ *
+ * Pinout @see https://www.raspberrypi-spy.co.uk/2021/01/pi-pico-pinout-and-power-pins/#prettyPhoto
+ */
+#if (defined ARDUINO_RASPBERRY_PI_PICO) || (defined ARDUINO_GENERIC_RP2040)
+
+#ifdef ARDUINO_RASPBERRY_PI_PICO
+#define BLINK_LED_PIN LED_BUILTIN
+#else
+#define BLINK_LED_PIN 19
+#endif
+#define SAMPLE_BUFFER_SIZE  48
+#define SAMPLE_RATE  48000
+
+//#define ADC_ENABLED
+//#define ADC_CONTROL_NOTE
+//#define ARP_MODULE_ENABLED
+
+#define MIDI_RX2_PIN    5
+#define MIDI_PORT2_ACTIVE
+
+#define MIDI_USB_ENABLED /* connect RP2040 as a USB device */
+
+#define MAX_DELAY 24000
+
+#define RP2040_AUDIO_PWM
+
+#endif /* ARDUINO_RASPBERRY_PI_PICO, ARDUINO_GENERIC_RP2040 */
+
+
+
 #ifdef TEENSYDUINO
 #include <Audio.h> /* required to access teensy audio defines */
 #endif
@@ -286,41 +326,6 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define MIDI_PORT1_ACTIVE
 
 #endif /* ARDUINO_SEEED_XIAO_M0 */
-
-/*
- * Configuration for
- * Board: "Rapsberry Pi Pico"
- *
- * BCK: 26
- * DIN: 28
- * LCK: 27  (always BCK + 1)
- *
- * MIDI_RX: 12 (GP9)
- *
- * Pinout @see https://www.raspberrypi-spy.co.uk/2021/01/pi-pico-pinout-and-power-pins/#prettyPhoto
- */
-#if (defined ARDUINO_RASPBERRY_PI_PICO) || (defined ARDUINO_GENERIC_RP2040)
-
-#ifdef ARDUINO_RASPBERRY_PI_PICO
-#define BLINK_LED_PIN LED_BUILTIN
-#else
-#define BLINK_LED_PIN 19
-#endif
-#define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  48000
-
-#define MIDI_RX2_PIN    5
-#define MIDI_PORT2_ACTIVE
-
-#define MIDI_USB_ENABLED /* connect RP2040 as a USB device */
-
-#if 0 // not supported yet
-#define MAX_DELAY 24000
-#endif
-
-#define RP2040_AUDIO_PWM
-
-#endif /* ARDUINO_RASPBERRY_PI_PICO, ARDUINO_GENERIC_RP2040 */
 
 /*
  * Configuration for

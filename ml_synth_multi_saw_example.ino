@@ -58,8 +58,12 @@
 #include <ml_types.h>
 #include <ml_alg.h>
 
-#include "ml_multi_saw.h"
-#include "ml_slicer.h"
+#include <ml_multi_saw.h>
+#include <ml_slicer.h>
+
+#ifdef ARP_MODULE_ENABLED
+#include <ml_arp.h>
+#endif
 
 #ifdef REVERB_ENABLED
 #include <ml_reverb.h>
@@ -165,7 +169,7 @@ void setup()
      */
     static int16_t delBuffer1[MAX_DELAY];
     static int16_t delBuffer2[MAX_DELAY];
-    Delay_Init2(delBuffer1, delBuffer2, MAX_DELAY);
+    DelayQ_Init2(delBuffer1, delBuffer2, MAX_DELAY);
 #endif
 
 #ifdef MIDI_BLE_ENABLED
@@ -195,6 +199,12 @@ void setup()
     Usb_Host_Midi_setup();
 #endif
 
+#ifdef ARP_MODULE_ENABLED
+    Arp_Init(1750); /* some quick tempo */
+    Arp_SelectSequence(1, 1);
+    Arp_Active();
+#endif
+
     Slicer_SetType(0, 0);
     Slicer_SetDecay(0, 127);
 
@@ -222,6 +232,10 @@ void setup()
 #else
     //#error only supported by ESP32 platform
 #endif
+#endif
+
+#ifdef ADC_ENABLED
+    AdcSetup();
 #endif
 }
 
@@ -308,6 +322,14 @@ void loop()
         loop_1Hz();
     }
 
+#ifdef ADC_ENABLED
+    AdcCheck();
+#endif
+
+#ifdef ARP_MODULE_ENABLED
+    Arp_Process(1);
+#endif
+
     /*
      * MIDI processing
      */
@@ -342,7 +364,7 @@ void loop()
     MultiSawSynth_Process(left, right, SAMPLE_BUFFER_SIZE);
     Slicer_Process(left, right, SAMPLE_BUFFER_SIZE);
 #ifdef MAX_DELAY
-    Delay_Process_Buff(&left[0].s16, &right[0].s16, &left[0].s16, &right[0].s16, SAMPLE_BUFFER_SIZE);
+    DelayQ_Process_Buff(&left[0].s16, &right[0].s16, &left[0].s16, &right[0].s16, SAMPLE_BUFFER_SIZE);
 #endif
 
     /*
@@ -353,27 +375,40 @@ void loop()
 
 void Status_ValueChangedFloat(const char *descr, float value)
 {
-    Serial.printf("%s: %0.3f", descr, value);
+    Serial.printf("%s: %0.3f\n", descr, value);
 }
 
 void Status_ValueChangedInt(const char *descr, int value)
 {
-    Serial.printf("%s: %d", descr, value);
+    Serial.printf("%s: %d\n", descr, value);
 }
 
 void App_NoteOn(uint8_t ch, uint8_t note, uint8_t vel)
 {
+#ifdef ARP_MODULE_ENABLED
+    Arp_NoteOn(ch, note, vel);
+#else
     MultiSawSynth_NoteOn(ch, note, vel);
+#endif
 }
 
 void App_NoteOff(uint8_t ch, uint8_t note)
 {
+#ifdef ARP_MODULE_ENABLED
+    Arp_NoteOff(ch, note);
+#else
     MultiSawSynth_NoteOff(ch, note);
+#endif
 }
 
 void App_NoteSetPitch(uint8_t ch, uint8_t note, uint32_t pitch)
 {
     MultiSawSynth_NoteSetPitch(ch, note, pitch);
+}
+
+void App_NoteSetVolume(uint8_t ch, uint8_t note, uint16_t volume)
+{
+    MultiSawSynth_NoteSetVolume(ch, note, volume);
 }
 
 void App_PitchBend(uint8_t ch, uint16_t bend)
@@ -440,6 +475,39 @@ inline void App_SliderSawCtrl(uint8_t id, uint8_t value)
         MultiSawSynth_SetProfile(value);
         break;
     }
+}
+
+/*
+ * Arp Callbacks
+ */
+void Arp_Cb_NoteOn(uint8_t ch, uint8_t note, float vel)
+{
+    MultiSawSynth_NoteOn(ch, note, vel);
+}
+
+void Arp_Cb_NoteOff(uint8_t ch, uint8_t note)
+{
+    MultiSawSynth_NoteOff(ch, note);
+}
+
+void Arp_Status_ValueChangedInt(const char *msg, int value)
+{
+    // Status_ValueChangedInt(msg, value);
+}
+
+void Arp_Status_LogMessage(const char *msg)
+{
+    //Status_LogMessage(msg);
+}
+
+void Arp_Status_ValueChangedFloat(const char *msg, float value)
+{
+    // Status_ValueChangedFloat(msg, value);
+}
+
+void Arp_Cb_Step(uint8_t step)
+{
+    /* ignore */
 }
 
 #if defined(I2C_SCL) && defined(I2C_SDA)
