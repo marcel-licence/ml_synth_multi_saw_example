@@ -7,8 +7,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.13.1<br />
 <b>Board:</b> Raspberry Pi Pico<br />
 <br />
-<b>Program storage space:</b> 86056 bytes<br />
-<b>Dynamic memory:</b> 62836 bytes<br />
+<b>Program storage space:</b> 87496 bytes<br />
+<b>Dynamic memory:</b> 158948 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
 <b>CPU Speed:</b> 125 MHz<br />
@@ -67,8 +67,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.13.1<br />
 <b>Board:</b> Generic RP2040<br />
 <br />
-<b>Program storage space:</b> 86056 bytes<br />
-<b>Dynamic memory:</b> 62836 bytes<br />
+<b>Program storage space:</b> 87496 bytes<br />
+<b>Dynamic memory:</b> 158948 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
 <b>CPU Speed:</b> 125 MHz<br />
