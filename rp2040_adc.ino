@@ -14,15 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Dieses Programm ist Freie Software: Sie können es unter den Bedingungen
+ * Dieses Programm ist Freie Software: Sie kÃ¶nnen es unter den Bedingungen
  * der GNU General Public License, wie von der Free Software Foundation,
  * Version 3 der Lizenz oder (nach Ihrer Wahl) jeder neueren
- * veröffentlichten Version, weiter verteilen und/oder modifizieren.
+ * verÃ¶ffentlichten Version, weiter verteilen und/oder modifizieren.
  *
- * Dieses Programm wird in der Hoffnung bereitgestellt, dass es nützlich sein wird, jedoch
- * OHNE JEDE GEWÄHR,; sogar ohne die implizite
- * Gewähr der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
- * Siehe die GNU General Public License für weitere Einzelheiten.
+ * Dieses Programm wird in der Hoffnung bereitgestellt, dass es nÃ¼tzlich sein wird, jedoch
+ * OHNE JEDE GEWÃ„HR,; sogar ohne die implizite
+ * GewÃ¤hr der MARKTFÃ„HIGKEIT oder EIGNUNG FÃœR EINEN BESTIMMTEN ZWECK.
+ * Siehe die GNU General Public License fÃ¼r weitere Einzelheiten.
  *
  * Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
  * Programm erhalten haben. Wenn nicht, siehe <https://www.gnu.org/licenses/>.
@@ -43,8 +43,9 @@
 
 
 #define CAPTURE_DEPTH 256
+#ifdef ADC_CONTROL_NOTE
 #define ADC_CONTROLLED_NOTE  128
-
+#endif
 
 struct adc_link
 {
@@ -56,8 +57,13 @@ struct adc_link adcToMidiMap[4] =
 {
     {0x00, 0x11},
     {0x01, 0x11},
+#if 0
     {0x07, 0x11},
     {0x01, 0x12},
+#else
+    {0x03, 0x11}, /* cutoff */
+    {0x01, 0x12},
+#endif
 };
 
 
