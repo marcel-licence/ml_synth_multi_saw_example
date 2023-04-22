@@ -57,6 +57,8 @@
  */
 #include <ml_types.h>
 #include <ml_alg.h>
+#include <ml_waveform.h>
+#include <ml_filter.h>
 
 #include <ml_multi_saw.h>
 #include <ml_slicer.h>
@@ -89,9 +91,26 @@
 
 char shortName[] = "ML_MultiSaw";
 
+float static_sine[WAVEFORM_CNT];
+float *sine = static_sine;
+
+
+struct filterQCoeffT mainFiltC;
+struct filterQProcT mainFiltL;
+struct filterQProcT mainFiltR;
+
 
 void setup()
 {
+    for (int i = 0; i < WAVEFORM_CNT; i++)
+    {
+        float val = (float)sin(i * 2.0 * PI / WAVEFORM_CNT);
+        sine[i] = val;
+    }
+
+    Filter_Init(&mainFiltL, &mainFiltC);
+    Filter_Init(&mainFiltR, &mainFiltC);
+
     /*
      * this code runs once
      */
@@ -167,8 +186,13 @@ void setup()
     /*
      * Prepare a buffer which can be used for the delay
      */
+#ifdef ESP32
+    static int16_t *delBuffer1 = (int16_t *)malloc(sizeof(int16_t) * MAX_DELAY);
+    static int16_t *delBuffer2 = (int16_t *)malloc(sizeof(int16_t) * MAX_DELAY);
+#else
     static int16_t delBuffer1[MAX_DELAY];
     static int16_t delBuffer2[MAX_DELAY];
+#endif
     DelayQ_Init2(delBuffer1, delBuffer2, MAX_DELAY);
 #endif
 
@@ -207,6 +231,7 @@ void setup()
 
     Slicer_SetType(0, 0);
     Slicer_SetDecay(0, 127);
+    Slicer_SetDepth(0, 0);
 
     Serial.printf("Wait for multi saw module to be initialized\n");
     MultiSawSynth_Init();
@@ -359,10 +384,17 @@ void loop()
      */
     Q1_14 left[SAMPLE_BUFFER_SIZE];
     Q1_14 right[SAMPLE_BUFFER_SIZE];
+
     memset(left, 0, sizeof(left));
     memset(right, 0, sizeof(left));
+
     MultiSawSynth_Process(left, right, SAMPLE_BUFFER_SIZE);
+
+    Filter_Process_Buffer(left, &mainFiltL, SAMPLE_BUFFER_SIZE);
+    Filter_Process_Buffer(right, &mainFiltR, SAMPLE_BUFFER_SIZE);
+
     Slicer_Process(left, right, SAMPLE_BUFFER_SIZE);
+
 #ifdef MAX_DELAY
     DelayQ_Process_Buff(&left[0].s16, &right[0].s16, &left[0].s16, &right[0].s16, SAMPLE_BUFFER_SIZE);
 #endif
@@ -473,6 +505,21 @@ inline void App_SliderSawCtrl(uint8_t id, uint8_t value)
         break;
     case 2:
         MultiSawSynth_SetProfile(value);
+        break;
+    case 3:
+        {
+            if (value < 30)
+            {
+                value = 30;
+            }
+            if (value > 126)
+            {
+                value = 126;
+            }
+            float c = value;
+            c *= 1.0f / 127.0f;
+            Filter_Calculate(c, 0.5f, &mainFiltC);
+        }
         break;
     }
 }
