@@ -311,6 +311,10 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define MIDI_PORT2_ACTIVE
 #define MIDI_BAUDRATE   31250
 
+#define REVERB_ENABLED /* add simple reverb */
+
+#define MAX_DELAY   (SAMPLE_RATE * 2)
+
 #endif /* ARDUINO_DAISY_SEED */
 
 /*
