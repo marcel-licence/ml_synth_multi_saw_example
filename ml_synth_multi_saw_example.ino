@@ -213,6 +213,12 @@ void setup()
     /* PSRAM will be fully used by the looper */
     Serial.printf("Total PSRAM: %d\n", ESP.getPsramSize());
     Serial.printf("Free PSRAM: %d\n", ESP.getFreePsram());
+
+    #ifdef BOARD_TTGO_T9_RGB_LED_WM8978
+    Serial.printf("Initialize Audio Interface WM8978\n");
+    WM8978_setup();
+    WS2812b_setup();
+    #endif
 #endif
 
 #if (defined OLED_OSC_DISP_ENABLED) && (defined TEENSYDUINO)
@@ -328,6 +334,9 @@ void loop_1Hz()
 #endif
 #ifdef BLINK_LED_PIN
     Blink_Process();
+#endif
+#ifdef BOARD_TTGO_T9_RGB_LED_WM8978
+  WS2812b_Blink_Process();
 #endif
 }
 
