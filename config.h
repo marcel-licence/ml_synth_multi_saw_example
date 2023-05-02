@@ -153,6 +153,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 //#define BOARD_ESP32_AUDIO_KIT_ES8388 /* activate this when using the ESP32 Audio Kit v2.2 with the ES8388 codec */
 //#define BOARD_ESP32_DOIT /* activate this when using the DOIT ESP32 DEVKIT V1 board */
 //#define BOARD_WEMOS_D1_MINI_ESP32
+//#define BOARD_TTGO_T9_RGB_LED_WM8978 /* activate this when using the TTGO T9 Audio Kit with the WM8978 codec */
 
 #define SAMPLE_BUFFER_SIZE  (48) /* 48 1kHz testtone */
 #define SAMPLE_RATE  48000
@@ -231,6 +232,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #elif (defined BOARD_ESP32_AUDIO_KIT_AC101)
 #elif (defined BOARD_ESP32_AUDIO_KIT_ES8388)
 #elif (defined BOARD_ESP32_DOIT)
+#elif (define BOARD_TTGO_T9_RGB_LED_WM8978)
 
 
 #define MIDI_PORT2_ACTIVE
