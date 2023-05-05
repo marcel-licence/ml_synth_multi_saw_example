@@ -93,7 +93,7 @@
 #define BLINK_LED_PIN 19
 #endif
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  48000
+#define SAMPLE_RATE  44100
 
 //#define ADC_ENABLED
 //#define ADC_CONTROL_NOTE
@@ -155,7 +155,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 //#define BOARD_WEMOS_D1_MINI_ESP32
 
 #define SAMPLE_BUFFER_SIZE  (48) /* 48 1kHz testtone */
-#define SAMPLE_RATE  48000
+#define SAMPLE_RATE  44100
 
 
 #if 0 /* setup */
@@ -306,7 +306,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 
 #define LED_PIN LED_BUILTIN
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE 48000
+#define SAMPLE_RATE 44100
 
 #define MIDI_PORT2_ACTIVE
 #define MIDI_BAUDRATE   31250
