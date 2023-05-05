@@ -93,7 +93,7 @@
 #define BLINK_LED_PIN 19
 #endif
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  44100
+#define SAMPLE_RATE  48000
 
 //#define ADC_ENABLED
 //#define ADC_CONTROL_NOTE
@@ -137,7 +137,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define MIDI_PORT2_ACTIVE
 #endif
 
-#define SAMPLE_RATE 44100
+#define SAMPLE_RATE 48000
 #define SAMPLE_BUFFER_SIZE 48
 
 #endif /* ESP8266 */
@@ -156,7 +156,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 //#define BOARD_TTGO_T9_RGB_LED_WM8978 /* activate this when using the TTGO T9 Audio Kit with the WM8978 codec */
 
 #define SAMPLE_BUFFER_SIZE  (48) /* 48 1kHz testtone */
-#define SAMPLE_RATE  44100
+#define SAMPLE_RATE  48000
 
 
 #if 0 /* setup */
@@ -182,7 +182,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 
 #define BLINK_LED_PIN     2
 //#define SAMPLE_SIZE_32BIT
-//#define SAMPLE_RATE 44100
+//#define SAMPLE_RATE 48000
 #define SAMPLE_BUFFER_SIZE  (48) /* 48 1kHz testtone */
 
 #define CODEC_RST_PIN   16
@@ -308,7 +308,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 
 #define LED_PIN LED_BUILTIN
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE 44100
+#define SAMPLE_RATE 48000
 
 #define MIDI_PORT2_ACTIVE
 #define MIDI_BAUDRATE   31250
@@ -348,7 +348,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define LED_PIN LED_USER_GREEN
 
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  44100
+#define SAMPLE_RATE  48000
 
 #define MIDI_PORT2_ACTIVE
 
@@ -367,7 +367,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define LED_PIN LED_USER_GREEN
 
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  44100
+#define SAMPLE_RATE  48000
 
 //#define MIDI_PORT1_ACTIVE /* MIDI in : PIN A10  not tested*/
 #define MIDI_PORT2_ACTIVE /* MIDI in : PIN A3 */
@@ -394,7 +394,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define LED_PIN LED_BUILTIN
 
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  44100
+#define SAMPLE_RATE  48000
 
 /*
  * define your I2S interface here!
@@ -415,7 +415,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define LED_PIN LED_BUILTIN
 
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  44100
+#define SAMPLE_RATE  48000
 
 /*
  * define your I2S interface here!
@@ -436,7 +436,7 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define LED_PIN LED_BUILTIN
 
 #define SAMPLE_BUFFER_SIZE  48
-#define SAMPLE_RATE  44100
+#define SAMPLE_RATE  48000
 
 /*
  * define your I2S interface here!

@@ -234,7 +234,7 @@ void setup()
     Slicer_SetDepth(0, 0);
 
     Serial.printf("Wait for multi saw module to be initialized\n");
-    MultiSawSynth_Init();
+    MultiSawSynth_Init(SAMPLE_RATE);
     Serial.printf("Multi saw module ready\n");
     MultiSawSynth_SetDetune(32);
     MultiSawSynth_SetCount(127);
