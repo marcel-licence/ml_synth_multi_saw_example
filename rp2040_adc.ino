@@ -44,6 +44,7 @@
 
 #define CAPTURE_DEPTH 256
 #ifdef ADC_CONTROL_NOTE
+#define ADC_CONTROLLED_CH   15
 #define ADC_CONTROLLED_NOTE  128
 #endif
 
@@ -91,7 +92,7 @@ void AdcToNote(uint32_t adc1Val, uint32_t adc2Val)
     {
         if (adc2Val > 55000)
         {
-            App_NoteOn(0, ADC_CONTROLLED_NOTE, 127);
+            App_NoteOn(ADC_CONTROLLED_CH, ADC_CONTROLLED_NOTE, 127);
             noteIsOn = true;
 
             adc2Val -= 55000;
@@ -101,7 +102,7 @@ void AdcToNote(uint32_t adc1Val, uint32_t adc2Val)
     {
         if (adc2Val < 55000)
         {
-            App_NoteOff(0, ADC_CONTROLLED_NOTE);
+            App_NoteOff(ADC_CONTROLLED_CH, ADC_CONTROLLED_NOTE);
             noteIsOn = false;
         }
     }
@@ -110,8 +111,8 @@ void AdcToNote(uint32_t adc1Val, uint32_t adc2Val)
     adc1Val += (1 << 13);
     adc2Val >>= 4;
 
-    App_NoteSetPitch(0, ADC_CONTROLLED_NOTE, adc1Val);
-    App_NoteSetVolume(0, ADC_CONTROLLED_NOTE, adc2Val);
+    App_NoteSetPitch(ADC_CONTROLLED_CH, ADC_CONTROLLED_NOTE, adc1Val);
+    App_NoteSetVolume(ADC_CONTROLLED_CH, ADC_CONTROLLED_NOTE, adc2Val);
 }
 #endif
 
