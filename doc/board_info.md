@@ -7,8 +7,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 2.5.0<br />
 <b>Board:</b> Generic STM32H7 Series<br />
 <br />
-<b>Program storage space:</b> 110708 bytes<br />
-<b>Dynamic memory:</b> 445340 bytes<br />
+<b>Program storage space:</b> 110548 bytes<br />
+<b>Dynamic memory:</b> 445372 bytes<br />
 <br />
 <b>Board part number:</b> Daisy Seed<br />
 <b>Upload method:</b> STM32CubeProgrammer (SWD)<br />
@@ -89,8 +89,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 2.0.7<br />
 <b>Board:</b> ESP32 Dev Module<br />
 <br />
-<b>Program storage space:</b> 782577 bytes<br />
-<b>Dynamic memory:</b> 98984 bytes<br />
+<b>Program storage space:</b> 782401 bytes<br />
+<b>Dynamic memory:</b> 99016 bytes<br />
 <br />
 <b>JTAG Adapter:</b> Disabled<br />
 <b>PSRAM:</b> Disabled<br />
@@ -168,8 +168,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.0.6<br />
 <b>Board:</b> ESP32 Dev Module<br />
 <br />
-<b>Program storage space:</b> 715134 bytes<br />
-<b>Dynamic memory:</b> 94756 bytes<br />
+<b>Program storage space:</b> 714974 bytes<br />
+<b>Dynamic memory:</b> 94788 bytes<br />
 <br />
 <b>PSRAM:</b> Disabled<br />
 <b>Partition Scheme:</b> No OTA (2MB APP/2MB SPIFFS)<br />
@@ -243,8 +243,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.13.1<br />
 <b>Board:</b> Raspberry Pi Pico<br />
 <br />
-<b>Program storage space:</b> 88232 bytes<br />
-<b>Dynamic memory:</b> 163092 bytes<br />
+<b>Program storage space:</b> 88112 bytes<br />
+<b>Dynamic memory:</b> 163124 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
 <b>CPU Speed:</b> 125 MHz<br />
@@ -303,8 +303,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.13.1<br />
 <b>Board:</b> Generic RP2040<br />
 <br />
-<b>Program storage space:</b> 88232 bytes<br />
-<b>Dynamic memory:</b> 163092 bytes<br />
+<b>Program storage space:</b> 88104 bytes<br />
+<b>Dynamic memory:</b> 163124 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
 <b>CPU Speed:</b> 125 MHz<br />
