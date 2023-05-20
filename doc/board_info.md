@@ -7,8 +7,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 2.5.0<br />
 <b>Board:</b> Generic STM32H7 Series<br />
 <br />
-<b>Program storage space:</b> 110548 bytes<br />
-<b>Dynamic memory:</b> 445372 bytes<br />
+<b>Program storage space:</b> 105100 bytes<br />
+<b>Dynamic memory:</b> 437816 bytes<br />
 <br />
 <b>Board part number:</b> Daisy Seed<br />
 <b>Upload method:</b> STM32CubeProgrammer (SWD)<br />
@@ -58,16 +58,16 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
     <tr>
         <td>Adafruit GFX Library</td>
-        <td>1.10.10</td>
+        <td>1.11.5</td>
         <td>https://github.com/adafruit/Adafruit-GFX-Library</td>
-        <td></td>
+        <td>https://github.com/adafruit/Adafruit-GFX-Library</td>
         <td>False</td>
     </tr>
     <tr>
-        <td>Adafruit SSD1306</td>
-        <td>2.4.5</td>
-        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
-        <td></td>
+        <td>Adafruit BusIO</td>
+        <td>1.14.1</td>
+        <td>https://github.com/adafruit/Adafruit_BusIO</td>
+        <td>https://github.com/adafruit/Adafruit_BusIO</td>
         <td>False</td>
     </tr>
     <tr>
@@ -78,10 +78,10 @@ Below you will find a list of build which can be configured and should compile w
         <td>True</td>
     </tr>
     <tr>
-        <td>Adafruit BusIO</td>
-        <td>1.14.1</td>
-        <td>https://github.com/adafruit/Adafruit_BusIO</td>
-        <td>https://github.com/adafruit/Adafruit_BusIO</td>
+        <td>Adafruit SSD1306</td>
+        <td>2.5.7</td>
+        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
+        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
         <td>False</td>
     </tr>
 </table><hr>
@@ -89,8 +89,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 2.0.7<br />
 <b>Board:</b> ESP32 Dev Module<br />
 <br />
-<b>Program storage space:</b> 782401 bytes<br />
-<b>Dynamic memory:</b> 99016 bytes<br />
+<b>Program storage space:</b> 776629 bytes<br />
+<b>Dynamic memory:</b> 91456 bytes<br />
 <br />
 <b>JTAG Adapter:</b> Disabled<br />
 <b>PSRAM:</b> Disabled<br />
@@ -137,16 +137,16 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
     <tr>
         <td>Adafruit GFX Library</td>
-        <td>1.10.10</td>
+        <td>1.11.5</td>
         <td>https://github.com/adafruit/Adafruit-GFX-Library</td>
-        <td></td>
+        <td>https://github.com/adafruit/Adafruit-GFX-Library</td>
         <td>False</td>
     </tr>
     <tr>
-        <td>Adafruit SSD1306</td>
-        <td>2.4.5</td>
-        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
-        <td></td>
+        <td>Adafruit BusIO</td>
+        <td>1.14.1</td>
+        <td>https://github.com/adafruit/Adafruit_BusIO</td>
+        <td>https://github.com/adafruit/Adafruit_BusIO</td>
         <td>False</td>
     </tr>
     <tr>
@@ -157,10 +157,10 @@ Below you will find a list of build which can be configured and should compile w
         <td>True</td>
     </tr>
     <tr>
-        <td>Adafruit BusIO</td>
-        <td>1.14.1</td>
-        <td>https://github.com/adafruit/Adafruit_BusIO</td>
-        <td>https://github.com/adafruit/Adafruit_BusIO</td>
+        <td>Adafruit SSD1306</td>
+        <td>2.5.7</td>
+        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
+        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
         <td>False</td>
     </tr>
 </table><hr>
@@ -168,8 +168,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.0.6<br />
 <b>Board:</b> ESP32 Dev Module<br />
 <br />
-<b>Program storage space:</b> 714974 bytes<br />
-<b>Dynamic memory:</b> 94788 bytes<br />
+<b>Program storage space:</b> 709134 bytes<br />
+<b>Dynamic memory:</b> 87228 bytes<br />
 <br />
 <b>PSRAM:</b> Disabled<br />
 <b>Partition Scheme:</b> No OTA (2MB APP/2MB SPIFFS)<br />
@@ -212,16 +212,16 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
     <tr>
         <td>Adafruit GFX Library</td>
-        <td>1.10.10</td>
+        <td>1.11.5</td>
         <td>https://github.com/adafruit/Adafruit-GFX-Library</td>
-        <td></td>
+        <td>https://github.com/adafruit/Adafruit-GFX-Library</td>
         <td>False</td>
     </tr>
     <tr>
-        <td>Adafruit SSD1306</td>
-        <td>2.4.5</td>
-        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
-        <td></td>
+        <td>Adafruit BusIO</td>
+        <td>1.14.1</td>
+        <td>https://github.com/adafruit/Adafruit_BusIO</td>
+        <td>https://github.com/adafruit/Adafruit_BusIO</td>
         <td>False</td>
     </tr>
     <tr>
@@ -232,10 +232,10 @@ Below you will find a list of build which can be configured and should compile w
         <td>True</td>
     </tr>
     <tr>
-        <td>Adafruit BusIO</td>
-        <td>1.14.1</td>
-        <td>https://github.com/adafruit/Adafruit_BusIO</td>
-        <td>https://github.com/adafruit/Adafruit_BusIO</td>
+        <td>Adafruit SSD1306</td>
+        <td>2.5.7</td>
+        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
+        <td>https://github.com/adafruit/Adafruit_SSD1306</td>
         <td>False</td>
     </tr>
 </table><hr>
@@ -243,8 +243,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.13.1<br />
 <b>Board:</b> Raspberry Pi Pico<br />
 <br />
-<b>Program storage space:</b> 88112 bytes<br />
-<b>Dynamic memory:</b> 163124 bytes<br />
+<b>Program storage space:</b> 87024 bytes<br />
+<b>Dynamic memory:</b> 154240 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
 <b>CPU Speed:</b> 125 MHz<br />
@@ -286,16 +286,16 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
     <tr>
         <td>Adafruit TinyUSB Library</td>
-        <td>1.14.4</td>
+        <td>1.9.2</td>
         <td>https://github.com/adafruit/Adafruit_TinyUSB_Arduino</td>
         <td></td>
-        <td>False</td>
+        <td>True</td>
     </tr>
     <tr>
         <td>MIDI Library</td>
         <td>5.0.2</td>
         <td>https://github.com/FortySevenEffects/arduino_midi_library</td>
-        <td></td>
+        <td>https://github.com/FortySevenEffects/arduino_midi_library.git</td>
         <td>False</td>
     </tr>
 </table><hr>
@@ -303,8 +303,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.13.1<br />
 <b>Board:</b> Generic RP2040<br />
 <br />
-<b>Program storage space:</b> 88104 bytes<br />
-<b>Dynamic memory:</b> 163124 bytes<br />
+<b>Program storage space:</b> 87016 bytes<br />
+<b>Dynamic memory:</b> 154240 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
 <b>CPU Speed:</b> 125 MHz<br />
@@ -347,16 +347,16 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
     <tr>
         <td>Adafruit TinyUSB Library</td>
-        <td>1.14.4</td>
+        <td>1.9.2</td>
         <td>https://github.com/adafruit/Adafruit_TinyUSB_Arduino</td>
         <td></td>
-        <td>False</td>
+        <td>True</td>
     </tr>
     <tr>
         <td>MIDI Library</td>
         <td>5.0.2</td>
         <td>https://github.com/FortySevenEffects/arduino_midi_library</td>
-        <td></td>
+        <td>https://github.com/FortySevenEffects/arduino_midi_library.git</td>
         <td>False</td>
     </tr>
 </table>
