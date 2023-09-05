@@ -55,7 +55,6 @@
 #define NOTE_ON_AFTER_SETUP /* used to get a test tone without MIDI input. Can be deactivated */
 
 
-
 //#define I2S_NODAC
 //#define NODAC
 
@@ -109,7 +108,6 @@
 #define RP2040_AUDIO_PWM
 
 #endif /* ARDUINO_RASPBERRY_PI_PICO, ARDUINO_GENERIC_RP2040 */
-
 
 
 #ifdef TEENSYDUINO
@@ -169,7 +167,6 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define BLINK_LED_PIN     2
 
 
-
 //#define I2S_DIN_PIN    32
 
 
@@ -191,8 +188,6 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #endif /* testsetup */
 
 
-
-
 //#define INPUT_TO_MIX /* use this to mix the input to the organ signal */
 
 #define LED_PIN     BLINK_LED_PIN
@@ -208,7 +203,6 @@ SoftwareSerial Serial2(RXD2, TXD2);
 
 //#define MIDI_BLE_ENABLED
 // #define BLE_MIDI_CLIENT
-
 
 
 /*
@@ -247,7 +241,6 @@ SoftwareSerial Serial2(RXD2, TXD2);
 #define SAMPLE_SIZE_16BIT
 
 
-
 /* MIDI_VIA_USB_ENABLED activates MIDI via USB (please look into usbMidiHost.ino for more information) */
 //#define MIDI_VIA_USB_ENABLED
 
@@ -272,7 +265,6 @@ SoftwareSerial Serial2(RXD2, TXD2);
  * LCK: 20
  */
 #ifdef TEENSYDUINO // CORE_TEENSY
-
 
 
 //#define USB_HOST_ENABLED

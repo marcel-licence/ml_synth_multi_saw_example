@@ -87,17 +87,15 @@
 #endif
 
 
-
-
 char shortName[] = "ML_MultiSaw";
 
 float static_sine[WAVEFORM_CNT];
 float *sine = static_sine;
 
 
-struct filterQCoeffT mainFiltC;
-struct filterQProcT mainFiltL;
-struct filterQProcT mainFiltR;
+struct filterCoeffQ16T mainFiltC;
+struct filterProcQ16T mainFiltL;
+struct filterProcQ16T mainFiltR;
 
 
 void setup()
@@ -182,7 +180,7 @@ void setup()
     Reverb_Setup(revBuffer);
 #endif
 
-#ifdef MAX_DELAY
+#ifdef MAX_DELAY_Q
     /*
      * Prepare a buffer which can be used for the delay
      */
@@ -193,7 +191,7 @@ void setup()
     static int16_t delBuffer1[MAX_DELAY];
     static int16_t delBuffer2[MAX_DELAY];
 #endif
-    DelayQ_Init2(delBuffer1, delBuffer2, MAX_DELAY);
+    DelayQ_Init2(delBuffer1, delBuffer2, MAX_DELAY_Q);
 #endif
 
 #ifdef MIDI_BLE_ENABLED
@@ -395,7 +393,7 @@ void loop()
 
     Slicer_Process(left, right, SAMPLE_BUFFER_SIZE);
 
-#ifdef MAX_DELAY
+#ifdef MAX_DELAY_Q
     DelayQ_Process_Buff(&left[0].s16, &right[0].s16, &left[0].s16, &right[0].s16, SAMPLE_BUFFER_SIZE);
 #endif
 
@@ -403,16 +401,6 @@ void loop()
      * Output the audio
      */
     Audio_Output(left, right);
-}
-
-void Status_ValueChangedFloat(const char *descr, float value)
-{
-    Serial.printf("%s: %0.3f\n", descr, value);
-}
-
-void Status_ValueChangedInt(const char *descr, int value)
-{
-    Serial.printf("%s: %d\n", descr, value);
 }
 
 void App_NoteOn(uint8_t ch, uint8_t note, uint8_t vel)
@@ -558,7 +546,7 @@ void Arp_Cb_Step(uint8_t step)
 }
 
 #if defined(I2C_SCL) && defined(I2C_SDA)
-void  ScanI2C(void)
+void ScanI2C(void)
 {
 #ifdef ARDUINO_GENERIC_F407VGTX
     Wire.setSDA(I2C_SDA);

@@ -7,8 +7,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 2.5.0<br />
 <b>Board:</b> Generic STM32H7 Series<br />
 <br />
-<b>Program storage space:</b> 105100 bytes<br />
-<b>Dynamic memory:</b> 437816 bytes<br />
+<b>Program storage space:</b> 105156 bytes<br />
+<b>Dynamic memory:</b> 53816 bytes<br />
 <br />
 <b>Board part number:</b> Daisy Seed<br />
 <b>Upload method:</b> STM32CubeProgrammer (SWD)<br />
@@ -89,8 +89,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 2.0.7<br />
 <b>Board:</b> ESP32 Dev Module<br />
 <br />
-<b>Program storage space:</b> 776629 bytes<br />
-<b>Dynamic memory:</b> 91456 bytes<br />
+<b>Program storage space:</b> 776737 bytes<br />
+<b>Dynamic memory:</b> 91424 bytes<br />
 <br />
 <b>JTAG Adapter:</b> Disabled<br />
 <b>PSRAM:</b> Disabled<br />
@@ -168,8 +168,8 @@ Below you will find a list of build which can be configured and should compile w
 <b>Version:</b> 1.0.6<br />
 <b>Board:</b> ESP32 Dev Module<br />
 <br />
-<b>Program storage space:</b> 709134 bytes<br />
-<b>Dynamic memory:</b> 87228 bytes<br />
+<b>Program storage space:</b> 709150 bytes<br />
+<b>Dynamic memory:</b> 87180 bytes<br />
 <br />
 <b>PSRAM:</b> Disabled<br />
 <b>Partition Scheme:</b> No OTA (2MB APP/2MB SPIFFS)<br />
@@ -240,19 +240,23 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
 </table><hr>
 <a name="rp2040_rp2040_rpipico"></a><b>Core:</b> <a h_ref="https://github.com/earlephilhower/arduino-pico">Raspberry Pi RP2040 Boards</a><br />
-<b>Version:</b> 1.13.1<br />
+<b>Version:</b> 3.2.0<br />
 <b>Board:</b> Raspberry Pi Pico<br />
 <br />
-<b>Program storage space:</b> 87024 bytes<br />
-<b>Dynamic memory:</b> 154240 bytes<br />
+<b>Program storage space:</b> 80100 bytes<br />
+<b>Dynamic memory:</b> 55148 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
-<b>CPU Speed:</b> 125 MHz<br />
+<b>CPU Speed:</b> 133 MHz<br />
 <b>Optimize:</b> Small (-Os) (standard)<br />
 <b>RTTI:</b> Disabled<br />
+<b>Stack Protector:</b> Disabled<br />
+<b>C++ Exceptions:</b> Disabled<br />
 <b>Debug Port:</b> Disabled<br />
 <b>Debug Level:</b> None<br />
 <b>USB Stack:</b> Adafruit TinyUSB<br />
+<b>IP/Bluetooth Stack:</b> IPv4 Only<br />
+<b>Upload Method:</b> Default (UF2)<br />
 <br />
 <b>Used libraries:</b><br />
 <table>
@@ -279,14 +283,21 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
     <tr>
         <td>I2S</td>
-        <td>1.0</td>
+        <td>2.0</td>
         <td>http://www.arduino.cc/en/Reference/I2S</td>
         <td></td>
         <td>True</td>
     </tr>
     <tr>
+        <td>AudioBufferManager</td>
+        <td>1.0.0</td>
+        <td>https://github.com/earlephilhower/arduino-pico</td>
+        <td></td>
+        <td>True</td>
+    </tr>
+    <tr>
         <td>Adafruit TinyUSB Library</td>
-        <td>1.9.2</td>
+        <td>2.1.0</td>
         <td>https://github.com/adafruit/Adafruit_TinyUSB_Arduino</td>
         <td></td>
         <td>True</td>
@@ -300,20 +311,24 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
 </table><hr>
 <a name="rp2040_rp2040_generic"></a><b>Core:</b> <a h_ref="https://github.com/earlephilhower/arduino-pico">Raspberry Pi RP2040 Boards</a><br />
-<b>Version:</b> 1.13.1<br />
+<b>Version:</b> 3.2.0<br />
 <b>Board:</b> Generic RP2040<br />
 <br />
-<b>Program storage space:</b> 87016 bytes<br />
-<b>Dynamic memory:</b> 154240 bytes<br />
+<b>Program storage space:</b> 88340 bytes<br />
+<b>Dynamic memory:</b> 55488 bytes<br />
 <br />
 <b>Flash Size:</b> 2MB (no FS)<br />
-<b>CPU Speed:</b> 125 MHz<br />
-<b>Optimize:</b> Small (-Os) (standard)<br />
+<b>CPU Speed:</b> 133 MHz<br />
+<b>Optimize:</b> Optimize Even More (-O3)<br />
 <b>RTTI:</b> Disabled<br />
+<b>Stack Protector:</b> Disabled<br />
+<b>C++ Exceptions:</b> Disabled<br />
 <b>Debug Port:</b> Disabled<br />
 <b>Debug Level:</b> None<br />
 <b>USB Stack:</b> Adafruit TinyUSB<br />
-<b>Boot Stage 2:</b> W25Q080 QSPI /4<br />
+<b>IP/Bluetooth Stack:</b> IPv4 Only<br />
+<b>Boot Stage 2:</b> Generic SPI /2<br />
+<b>Upload Method:</b> Default (UF2)<br />
 <br />
 <b>Used libraries:</b><br />
 <table>
@@ -340,14 +355,21 @@ Below you will find a list of build which can be configured and should compile w
     </tr>
     <tr>
         <td>I2S</td>
-        <td>1.0</td>
+        <td>2.0</td>
         <td>http://www.arduino.cc/en/Reference/I2S</td>
         <td></td>
         <td>True</td>
     </tr>
     <tr>
+        <td>AudioBufferManager</td>
+        <td>1.0.0</td>
+        <td>https://github.com/earlephilhower/arduino-pico</td>
+        <td></td>
+        <td>True</td>
+    </tr>
+    <tr>
         <td>Adafruit TinyUSB Library</td>
-        <td>1.9.2</td>
+        <td>2.1.0</td>
         <td>https://github.com/adafruit/Adafruit_TinyUSB_Arduino</td>
         <td></td>
         <td>True</td>
