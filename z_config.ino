@@ -112,7 +112,7 @@ struct midiControllerMapping edirolMapping[] =
     { 0x4, 0x11, "S5", NULL, Slicer_SetDecay, 4},
     { 0x5, 0x11, "S6", NULL, Slicer_SetDepth, 5},
     { 0x6, 0x11, "S7", NULL, Slicer_SetType, 6},
-#ifdef MAX_DELAY
+#ifdef MAX_DELAY_Q
     { 0x7, 0x11, "S8", NULL, DelayQ_SetFeedback, 7},
 
     { 0x1, 0x12, "S9", NULL, DelayQ_SetOutputLevel, 8},
