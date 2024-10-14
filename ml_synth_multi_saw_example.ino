@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Marcel Licence
+ * Copyright (c) 2024 Marcel Licence
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
  */
 
 /**
- * @file ml_synth_organ_example.ino
+ * @file ml_synth_multi_saw_example.ino
  * @author Marcel Licence
  * @date 26.11.2021
  *
@@ -127,7 +127,7 @@ void setup()
     DaisySeed_Setup();
 #endif
 
-    delay(500);
+    delay(2500);
 
 #ifdef SWAP_SERIAL
     /* only one hw serial use this for ESP */
@@ -143,7 +143,7 @@ void setup()
     Serial.printf("Loading data\n");
 
 
-    Serial.printf("Multi Saw Synth Example");
+    Serial.printf("Multi Saw Synth Example\n");
 
 
 #ifdef ESP8266

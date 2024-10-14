@@ -71,6 +71,7 @@
 /* use the following to test the output / codec */
 //#define OUTPUT_SAW_TEST
 
+#define STATUS_SIMPLE
 
 /*
  * Configuration for
@@ -108,6 +109,32 @@
 #define RP2040_AUDIO_PWM
 
 #endif /* ARDUINO_RASPBERRY_PI_PICO, ARDUINO_GENERIC_RP2040 */
+
+
+/*
+ * configuration for the Raspberry Pi Pico 2
+ * BOARD: Raspberry Pi RP2040 (4.0.1)
+ * Device: Raspberry Pi Pico 2
+ */
+#ifdef ARDUINO_ARCH_RP2040
+#ifdef __ARM_FEATURE_DSP
+#define MAX_DELAY 8096
+#define PICO_AUDIO_I2S
+#define PICO_AUDIO_I2S_DATA_PIN 26
+#define PICO_AUDIO_I2S_CLOCK_PIN_BASE 27
+#define SAMPLE_BUFFER_SIZE  48
+#define SAMPLE_RATE  48000
+#define MIDI_RX1_PIN    13
+#define MIDI_TX1_PIN    12
+//#define WS2812_PIN  3
+//#define LED_COUNT 4
+#define LED_PIN LED_BUILTIN
+#define BLINK_LED_PIN LED_BUILTIN
+//#define WS2812_PIN 3
+#define STATUS_SIMPLE
+#define REVERB_ENABLED
+#endif
+#endif
 
 
 #ifdef TEENSYDUINO
