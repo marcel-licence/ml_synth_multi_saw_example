@@ -70,7 +70,9 @@
 #ifdef REVERB_ENABLED
 #include <ml_reverb.h>
 #endif
-#include <ml_delay.h>
+#ifdef MAX_DELAY_Q
+#include <ml_delay_q.h>
+#endif
 #ifdef OLED_OSC_DISP_ENABLED
 #include <ml_scope.h>
 #endif
