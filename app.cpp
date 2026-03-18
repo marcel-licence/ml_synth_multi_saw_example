@@ -129,6 +129,12 @@ void App_Setup(void)
     DaisySeed_Setup();
 #endif
 
+#ifdef ML_BOARD_SETUP
+    Board_Setup();
+#else
+    Audio_Setup();
+#endif
+
     delay(2500);
 
 #ifdef SWAP_SERIAL
@@ -152,8 +158,6 @@ void App_Setup(void)
     Midi_Setup();
 #endif
 
-    Serial.printf("Initialize Audio Interface\n");
-    Audio_Setup();
 
 #ifdef TEENSYDUINO
     Teensy_Setup();
