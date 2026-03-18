@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Marcel Licence
+ * Copyright (c) 2026 Marcel Licence
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,6 +45,16 @@
 #ifdef __CDT_PARSER__
 #include <cdt.h>
 #endif
+
+
+#include "config.h"
+#include "app.h"
+
+
+#ifdef REVERB_ENABLED
+#include <ml_reverb.h>
+#endif
+#include <ml_slicer.h>
 
 
 #ifdef AUDIO_KIT_BUTTON_ANALOG
