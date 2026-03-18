@@ -75,25 +75,7 @@
 //#define MIDI_BLE_CLIENT /* configured as client it will start to search for the server to connect to */
 //#define MIDI_BLE_DEBUG_ENABLED
 
-/*
- * include the board configuration
- * there you will find the most hardware depending pin settings
- */
-#include <ml_boards.h> /* requires the ML_Synth library:  https://github.com/marcel-licence/ML_SynthTools */
 
-#ifdef BOARD_ML_V1
-#elif (defined BOARD_ESP32_AUDIO_KIT_AC101)
-#elif (defined BOARD_ESP32_AUDIO_KIT_ES8388)
-#elif (defined BOARD_ESP32_DOIT)
-#elif (define BOARD_TTGO_T9_RGB_LED_WM8978)
-
-#define MIDI_PORT2_ACTIVE
-#define MIDI_RX2_PIN RXD2
-
-/* you can activate the following lines to get an additional MIDI input */
-// MIDI_PORT1_ACTIVE
-// #define MIDI_RX1_PIN 13
-#endif
 
 #define SAMPLE_RATE 48000
 #define SAMPLE_SIZE_16BIT
