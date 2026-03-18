@@ -74,6 +74,9 @@
 #define STATUS_SIMPLE
 
 
+#define MIDI_FMT_INT
+
+
 #include "config/config_blackpill_f411ce.h"
 #include "config/config_black_f407ve.h"
 #include "config/config_bluepill_f103c8.h"
@@ -96,6 +99,17 @@
  * there you will find the most hardware depending pin settings
  */
 #include <ml_boards.h> /* requires library ML_SynthTools: https://github.com/marcel-licence/ML_SynthTools */
+
+
+#ifndef SAMPLE_RATE
+#define SAMPLE_RATE 48000
+#define SAMPLE_SIZE_16BIT
+#define SAMPLE_BUFFER_SIZE  48
+#endif
+
+#ifndef MIDI_BAUDRATE
+#define MIDI_BAUDRATE   31250
+#endif
 
 
 #endif /* CONFIG_H_ */

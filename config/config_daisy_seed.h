@@ -44,9 +44,7 @@
 #define SAMPLE_RATE 48000
 
 #define MIDI_PORT2_ACTIVE
-#define MIDI_BAUDRATE   31250
 
-#define REVERB_ENABLED /* add simple reverb */
 
 #define MAX_DELAY   (SAMPLE_RATE * 2)
 

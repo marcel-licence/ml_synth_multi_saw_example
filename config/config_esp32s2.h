@@ -44,13 +44,5 @@
 #define I2S_NODAC
 #define BLINK_LED_PIN 15
 
-#endif
-
-
-#define MIDI_FMT_INT
-#ifndef MIDI_BAUDRATE
-#define MIDI_BAUDRATE   31250
-#endif
-
 
 #endif /* (defined ARDUINO_LOLIN_S2_MINI) || (defined ARDUINO_ESP32S2_DEV) */

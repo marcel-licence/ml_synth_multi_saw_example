@@ -77,9 +77,6 @@
 
 
 
-#define SAMPLE_RATE 48000
-#define SAMPLE_SIZE_16BIT
-#define SAMPLE_BUFFER_SIZE  48
 
 /* MIDI_VIA_USB_ENABLED activates MIDI via USB (please look into usbMidiHost.ino for more information) */
 //#define MIDI_VIA_USB_ENABLED
