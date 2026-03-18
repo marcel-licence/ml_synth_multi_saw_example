@@ -39,10 +39,14 @@
 #if (defined ARDUINO_LOLIN_S2_MINI) || (defined ARDUINO_ESP32S2_DEV)
 
 
-#define SAMPLE_SIZE_32BIT
-#define SAMPLE_BUFFER_SIZE  48
-#define I2S_NODAC
 #define BLINK_LED_PIN 15
+
+#define I2S_BCLK_PIN -1
+#define I2S_WCLK_PIN -1
+#define I2S_DOUT_PIN 17
+#define I2S_DIRECT_OUT
+#define AUDIO_MONO_DOWNMIX
+#define AUDIO_OUT_MONO
 
 
 #endif /* (defined ARDUINO_LOLIN_S2_MINI) || (defined ARDUINO_ESP32S2_DEV) */
