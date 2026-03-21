@@ -21,7 +21,7 @@ jobs:
           - name: "ESP32 Dev Module"
             fname: "esp32"
             fqbn: "esp32:esp32:esp32"
-            core: "esp32:esp32@2.0.17"
+            core: "esp32:esp32@3.3.7"
             urls: "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json"
             family: "ESP32"
             extra_libs: ""
@@ -31,7 +31,7 @@ jobs:
           - name: "ESP32S2 Dev Module"
             fname: "esp32s2"
             fqbn: "esp32:esp32:esp32s2"
-            core: "esp32:esp32@2.0.17"
+            core: "esp32:esp32@3.3.7"
             urls: "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json"
             family: "ESP32"
             extra_libs: ""
@@ -41,7 +41,7 @@ jobs:
           - name: "LOLIN S2 Mini"
             fname: "lolin_s2_mini"
             fqbn: "esp32:esp32:lolin_s2_mini"
-            core: "esp32:esp32@2.0.17"
+            core: "esp32:esp32@3.3.7"
             urls: "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json"
             family: "ESP32"
             extra_libs: ""
@@ -51,7 +51,7 @@ jobs:
           - name: "ESP32S3 Dev Module"
             fname: "esp32s3"
             fqbn: "esp32:esp32:esp32s3"
-            core: "esp32:esp32@2.0.17"
+            core: "esp32:esp32@3.3.7"
             urls: "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json"
             family: "ESP32"
             extra_libs: ""
@@ -61,7 +61,7 @@ jobs:
           - name: "ESP32C3 Dev Module"
             fname: "esp32c3"
             fqbn: "esp32:esp32:esp32c3"
-            core: "esp32:esp32@2.0.17"
+            core: "esp32:esp32@3.3.7"
             urls: "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json"
             family: "ESP32"
             extra_libs: ""
@@ -71,7 +71,7 @@ jobs:
           - name: "XIAO_ESP32C3"
             fname: "xiao_esp32c3"
             fqbn: "esp32:esp32:XIAO_ESP32C3"
-            core: "esp32:esp32@2.0.17"
+            core: "esp32:esp32@3.3.7"
             urls: "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json"
             extra_libs: ""
             options: ""
@@ -167,6 +167,9 @@ jobs:
             manual_only: true
 
         exclude:
+          - board:
+              name: "LOLIN S2 Mini"
+
           - board:
               name: "XIAO_ESP32C3"
 
