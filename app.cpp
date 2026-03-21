@@ -91,7 +91,7 @@
 #endif
 
 
-char shortName[] = "ML_MultiSaw";
+const char shortName[] = "ML_MultiSaw";
 
 float static_sine[WAVEFORM_CNT];
 float *sine = static_sine;
