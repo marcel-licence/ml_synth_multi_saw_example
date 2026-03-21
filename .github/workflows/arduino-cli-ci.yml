@@ -168,6 +168,9 @@ jobs:
 
         exclude:
           - board:
+              name: "LOLIN S2 Mini"
+
+          - board:
               name: "XIAO_ESP32C3"
 
           - board:
